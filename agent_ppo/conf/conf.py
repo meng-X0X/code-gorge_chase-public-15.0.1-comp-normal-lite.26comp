@@ -13,7 +13,8 @@ Configuration for Gorge Chase PPO.
 
 class Config:
 
-    # Feature dimensions / 特征维度（共40维）
+    # Feature dimensions / 特征维度（共42维）
+    # 4=英雄, 5=怪物0, 5=怪物1, 16=局部地图, 8=合法动作, 2=进度, 2=宝箱
     FEATURES = [
         4,
         5,
@@ -21,6 +22,7 @@ class Config:
         16,
         8,
         2,
+        2, # 宝箱特征（nearest_chest_dist_norm, chest_count_norm）
     ]
     FEATURE_SPLIT_SHAPE = FEATURES
     FEATURE_LEN = sum(FEATURE_SPLIT_SHAPE)
